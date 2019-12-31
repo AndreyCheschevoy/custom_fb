@@ -1,16 +1,18 @@
+import Vue from 'vue';
+import router from './router';
+import App from './components/AppComponent';
+// import store from './store';
+
 require('./bootstrap');
 
-Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue').default
-);
+const app = new Vue({
+    el: '#app',
 
-Vue.component(
-    'passport-authorized-clients',
-    require('./components/passport/AuthorizedClients.vue').default
-);
+    components: {
+        App
+    },
 
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue').default
-);
+    router,
+
+    // store,
+});
